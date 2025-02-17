@@ -1,7 +1,10 @@
 <script setup>
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+// import router from '../router/index'
 
 const route = useRoute()
+const router = useRouter()
+console.log(route);
 
 
 </script>
@@ -12,6 +15,9 @@ const route = useRoute()
 
   </main>
   <pre>
-    {{ $route }}
+    <!-- {{ $route }} -->
+    <!-- {{ $router }} -->
+      <!-- {{ router }} -->
+        <!-- {{ route }} -->
   </pre>
 </template>

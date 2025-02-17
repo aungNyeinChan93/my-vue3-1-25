@@ -19,23 +19,23 @@ import { RouterLink, RouterView } from 'vue-router'
                 <nav aria-label="Global" class="hidden md:block">
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
-                            <RouterLink class=" p-1 rounded" :to="{ name: 'home' }"
+                            <RouterLink class=" px-2 py-1 rounded" :to="{ name: 'home' }"
                                 :class="{ 'bg-green-400': $route.name === 'home' }">Home
                             </RouterLink>
                         </li>
 
                         <li>
-                            <RouterLink :to="{ name: 'about' }" class=" p-1 rounded"
+                            <RouterLink :to="{ name: 'about' }" class=" px-2 py-1 rounded"
                                 :class="{ 'bg-green-400': $route.name === 'about' }">About</RouterLink>
                         </li>
 
                         <li>
-                            <RouterLink :to="{ name: 'test', }" class=" p-1 rounded"
+                            <RouterLink :to="{ name: 'test', }" class=" px-2 py-1 rounded"
                                 :class="{ 'bg-green-400': $route.name === 'test' }">Test</RouterLink>
                         </li>
 
                         <li>
-                            <RouterLink :to="{ name: 'tuto', }" class=" p-1 rounded"
+                            <RouterLink :to="{ name: 'tuto', }" class=" px-2 py-1 rounded"
                                 :class="{ 'bg-green-400': $route.name === 'tuto' }">Tuto</RouterLink>
                         </li>
 

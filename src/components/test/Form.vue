@@ -7,6 +7,7 @@ const form = reactive({
 })
 
 const submit = () => {
+    console.log(form);
 
 }
 

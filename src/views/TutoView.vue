@@ -1,10 +1,11 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import Form from "@/components/test/Form.vue";
 import AssignmentList from '../components/test/AssignmentList.vue'
 import Button from '../components/Button.vue'
 import { useRouter } from 'vue-router';
 import GeneralCard from '@/components/test/GeneralCard.vue';
+import TaskAdd from '@/components/test/TaskAdd.vue';
 
 
 const assignments = ref([
@@ -18,9 +19,21 @@ const finshedAssigns = computed(() => {
     return assignments.value.filter((assign) => assign.status === true);
 });
 
+
 const router = useRouter();
 
-console.log(router);
+const task = reactive({
+    name: '',
+    status: false
+});
+
+const add = () => {
+    assignments.value.push({ name: task.name, status: task.status });
+    task.name = ''
+}
+const handleAlertEmit = (event) => {
+    alert(event);
+}
 
 </script>
 
@@ -31,13 +44,17 @@ console.log(router);
 
         <AssignmentList :assignments="assignments" :finshedAssigns="finshedAssigns" />
 
-        <Button :disabled="true" color="bg-red-600" type="button" :action="() => router.back()">Click</Button>
+        <div class="my-4 border rounded p-1">
+            <TaskAdd :action="add" v-model="task" @alert-emit="handleAlertEmit" />
+        </div>
+
+        <Button :disabled="true" color="bg-purple-400" type="button" :action="() => router.back()">Click</Button>
 
         <div class="grid grid-cols-4 gap-4 px-10">
             <template v-for="test in [1, 2, 3, 4]" :key="test">
                 <GeneralCard>
                     <template #image>
-                        <img src="../assets//images/default.png" alt="img"
+                        <img src="@/assets//images/default.png" alt="img"
                             class="h-64 w-full object-cover sm:h-80 lg:h-96">
                     </template>
                     <template #title>

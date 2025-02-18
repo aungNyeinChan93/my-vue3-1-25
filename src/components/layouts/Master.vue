@@ -40,6 +40,11 @@ import { RouterLink, RouterView } from 'vue-router'
                         </li>
 
                         <li>
+                            <RouterLink :to="{ name: 'testEmit', }" class=" px-2 py-1 rounded"
+                                :class="{ 'bg-green-400': $route.name === 'testEmit' }">Emit Test</RouterLink>
+                        </li>
+
+                        <li>
                             <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Services </a>
                         </li>
 

@@ -24,6 +24,11 @@ const router = createRouter({
       name: "tuto",
       component: () => import("@/views/TutoView.vue"),
     },
+    {
+      path: "/testEmit",
+      name: "testEmit",
+      component: () => import("@/views/TestEmitView.vue"),
+    },
   ],
 });
 

@@ -29,6 +29,11 @@ const router = createRouter({
       name: "testEmit",
       component: () => import("@/views/TestEmitView.vue"),
     },
+    {
+      path: "/todos",
+      name: "todos",
+      component: () => import("@/views/TodoView.vue"),
+    },
   ],
 });
 

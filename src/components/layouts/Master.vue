@@ -45,6 +45,12 @@ import { RouterLink, RouterView } from 'vue-router'
                         </li>
 
                         <li>
+                            <RouterLink :to="{ name: 'todos', }" class=" px-2 py-1 rounded"
+                                :class="{ 'bg-green-400': $route.name === 'todos' }">Todo</RouterLink>
+                        </li>
+
+
+                        <li>
                             <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Services </a>
                         </li>
 
@@ -87,8 +93,10 @@ import { RouterLink, RouterView } from 'vue-router'
         <slot />
     </main>
 
-    <footer class="text-center p-2 my-3 bg-gray-200 mx-10 flow-root rounded ">
+    <footer v-if="$slots.footer" class="text-center p-2 my-3 bg-gray-200 mx-10 flow-root rounded ">
         <slot name="footer"></slot>
     </footer>
+
+
 
 </template>

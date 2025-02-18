@@ -39,6 +39,7 @@ const add = () => {
 const handelFilter = (currentTag) => {
     assignments.value = currentTag.value == 'all' ? assignments.value.map((a) => a) : assignments.value.filter((a) => a.tag === currentTag.value)
 }
+
 </script>
 
 <template>
@@ -73,6 +74,7 @@ const handelFilter = (currentTag) => {
     </main>
     <pre>
     <!-- {{ tags }} -->
+    {{ $event }}
 </pre>
 </template>
 

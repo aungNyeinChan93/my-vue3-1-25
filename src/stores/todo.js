@@ -6,7 +6,7 @@ export const useTodoStore = defineStore("todo", () => {
   const todos = ref([]);
   const getData = async (url) => {
     const response = await axios.get(url);
-    const { data } = await response;
+    const { data } = response;
     todos.value = data;
   };
   return { todos, getData };

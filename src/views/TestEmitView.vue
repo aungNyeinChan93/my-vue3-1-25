@@ -11,6 +11,7 @@ const handelEmit = (emitData) => {
 
 <template>
     <section class="w-full min-h-screen">
+
         <Emit @todos-emit="handelEmit" />
 
         <div v-show="Object.keys(todos).length" class="px-10 grid grid-cols-2 gap-4 space-y-2 my-4">

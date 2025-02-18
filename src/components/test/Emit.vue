@@ -11,6 +11,7 @@ const emit = defineEmits(['todos-emit'])
 const emitData = () => {
     emit('todos-emit', todos)
 }
+
 </script>
 
 <template>

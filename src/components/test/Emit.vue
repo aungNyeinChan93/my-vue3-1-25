@@ -1,15 +1,15 @@
 <script setup>
-import { useTestStore } from '@/stores/test'
 import { onMounted } from 'vue';
+import { useTodoStore } from '@/stores/todo';
 
-const { testData, fetchData } = useTestStore();
+const { todos, getData } = useTodoStore();
 
-onMounted(() => fetchData('https://jsonplaceholder.typicode.com/todos'));
+onMounted(() => getData('https://jsonplaceholder.typicode.com/todos'));
 
 const emit = defineEmits(['todos-emit'])
 
 const emitData = () => {
-    emit('todos-emit', testData)
+    emit('todos-emit', todos)
 }
 </script>
 
